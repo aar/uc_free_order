@@ -27,6 +27,7 @@ function uc_free_order_form_uc_cart_checkout_form_alter(&$form, &$form_state, $f
   // make the form automatically select the free order without need for user input
   $form['panes']['payment']['payment_method']['#default_value'] = 'free_order';
   $form['panes']['payment']['payment_method']['#disabled'] = 'TRUE';
+  // delete any details from old default payment like credit card options
   unset($form['panes']['payment']['details']);
 }
 
